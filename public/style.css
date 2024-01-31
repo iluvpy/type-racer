@@ -8,22 +8,45 @@ body {
     background-color: #313131;
 }
 
-.main-text {
+.textarea-container {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 30%;
+    width: 50%;
     height: auto;
    
 
     transform: translate(-50%, -50%);
-    text-align: center;
     font-size: 2rem;
       
 }
 
-.single-day-regular {
-    font-family: "Single Day", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+.input {
+    border: 0;
+    background-color: #313131;
+    color: white;
+    height: 150px;
+    width: 100%;
+    resize: none;
+}
+.input:focus {
+    outline: none;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 150px;
+    transform: translate(-50%, -53%);
+
+    background: transparent;
+    pointer-events: none;
+}
+
+
+.font {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
