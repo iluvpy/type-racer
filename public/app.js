@@ -25,4 +25,16 @@ input.oninput = (event) => {
         textParagraph.textContent = textParagraph.textContent.slice(1); // remove first char 
         textDisplay.insertBefore(charSpan, textParagraph);
     }
+    else if (event.inputType == "deleteContentBackward") {
+        console.log("deleting!!!!");
+        let spans = textDisplay.getElementsByTagName("span");
+        console.log(spans);
+        if (spans.length) {
+            let lastSpan = spans[spans.length - 1];
+            let char = lastSpan.textContent;
+            textParagraph.textContent = char + textParagraph.textContent; 
+            lastSpan.remove();
+        }
+
+    }
 }

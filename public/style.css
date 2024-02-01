@@ -21,6 +21,10 @@ body {
       
 }
 
+p {
+    display: inline;
+}
+
 .input {
     border: 0;
     background-color: #313131;
