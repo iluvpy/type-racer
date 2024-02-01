@@ -19,9 +19,7 @@ body {
     transform: translate(-50%, -50%);
     font-size: 2rem;
 
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.0);
-      
+    background-color: transparent;   
 }
 
 p {
@@ -31,7 +29,7 @@ p {
 .input {
     border: 0;
     background-color: #313131;
-    color: white;
+    color: transparent;
     height: 150px;
     width: 100%;
     resize: none;
@@ -48,7 +46,6 @@ p {
     height: 150px;
     transform: translate(-50%, -53%);
 
-    background: transparent;
     pointer-events: none;
 }
 

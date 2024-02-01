@@ -47,5 +47,5 @@ textArea.oninput = (event) => {
 
     // move text cursor the end of the text in input
     setTimeout(() => { textArea.selectionStart = textArea.selectionEnd = 10000; }, 0);
-
+    event.preventDefault();
 }
