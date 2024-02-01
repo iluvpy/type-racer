@@ -1,29 +1,36 @@
 
 
-const input = document.getElementsByClassName("input")[0];
+const textArea = document.getElementsByClassName("input")[0];
 const textDisplay = document.getElementsByClassName("text-display")[0];
 const textParagraph = textDisplay.getElementsByTagName("p")[0];
 const initialText = textParagraph.textContent;
 
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
+
 var inputtedChars = ""; // NOT used right now
-input.oninput = (event) => {
+textArea.oninput = (event) => {
     console.log(event); 
     if (event.data != null) {
-        inputtedChars += event.data;
-
-        let character = textParagraph.textContent[0];
+        
+        let currentChar = textParagraph.textContent[0];
         let colorClass = "green";
-        if (event.data != character) {
+        if (event.data != currentChar) {
             colorClass = "red";
         }
 
         let charSpan = document.createElement("span");
-        charSpan.textContent = character;
+        charSpan.textContent = currentChar;
         charSpan.classList.add(colorClass);
         charSpan.classList.add("universal-font");
 
         textParagraph.textContent = textParagraph.textContent.slice(1); // remove first char 
         textDisplay.insertBefore(charSpan, textParagraph);
+
+        // update input value to avoid two characters on top of eachother
+        textArea.value = setCharAt(textArea.value, textArea.value.length - 1, currentChar);
     }
     else if (event.inputType == "deleteContentBackward") {
         console.log("deleting!!!!");
@@ -37,4 +44,8 @@ input.oninput = (event) => {
         }
 
     }
+
+    // move text cursor the end of the text in input
+    setTimeout(() => { textArea.selectionStart = textArea.selectionEnd = 10000; }, 0);
+
 }
