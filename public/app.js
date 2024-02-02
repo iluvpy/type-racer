@@ -24,7 +24,7 @@ textArea.oninput = (event) => {
         let charSpan = document.createElement("span");
         charSpan.textContent = currentChar;
         charSpan.classList.add(colorClass);
-        charSpan.classList.add("universal-font");
+        charSpan.classList.add("default-font");
 
         textParagraph.textContent = textParagraph.textContent.slice(1); // remove first char 
         textDisplay.insertBefore(charSpan, textParagraph);
