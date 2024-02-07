@@ -21,10 +21,6 @@ body {
     background-color: transparent;   
 }
 
-.text-cursor {
-    position: inherit;
-    
-}
 
 .input {
     border: 0;
@@ -44,7 +40,7 @@ body {
     top: 50%;
     width: 50%;
     height: 150px;
-    transform: translate(-50%, -53%);
+    transform: translate(-50%, -50%);
 
     pointer-events: none;
 }
