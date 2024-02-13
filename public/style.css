@@ -1,0 +1,73 @@
+
+body {
+    background-color: #424549;
+}
+.center-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 30vh;
+    max-height: 500px;
+
+    background: #36393e;
+
+    overflow: hidden;
+    
+}
+
+.text-container {
+    position: inherit;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 25vh;
+    max-height: 500px;
+
+    background: #36393e;
+
+    overflow: hidden;
+    
+}
+
+.word {
+    position: relative;
+    color: rgba(255, 255, 255, .5);
+
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1rem;
+}
+
+/* words that haven't been typed by the user yet */
+.untyped {
+    color: rgba(255, 255, 255, .5);
+}
+
+/*  class added to words that the user typed out */
+.typed {
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-cursor {
+    background-color: rgba(255, 255, 255, .3);
+
+    animation-name: cursor-background;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes cursor-background {
+    from {}
+    to {
+      background-color: rgba(255, 255, 255, 0);
+    }
+}
