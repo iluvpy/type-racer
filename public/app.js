@@ -19,7 +19,6 @@ function removeCursor() {
 }
 
 function updateCursor() {
-    removeCursor();
     let spanWithCursor = words[cursorWordPos];
     let letterWithCursor = spanWithCursor.textContent[cursorLetterPos];
     let splitText = splitString(cursorLetterPos, spanWithCursor.textContent);
@@ -52,6 +51,7 @@ async function sleep(ms) {
 } 
 
 function moveCursorForward() {
+    removeCursor();
     let wordLength = words[cursorWordPos].textContent.length;
     if (cursorLetterPos + 1 >= wordLength && cursorWordPos + 1 < words.length) {
         cursorLetterPos = 0;
@@ -62,6 +62,7 @@ function moveCursorForward() {
 }
 
 function moveCursorBackwards() {
+    removeCursor();
     if (cursorLetterPos - 1 <= 0 && cursorWordPos != 0) {
         cursorWordPos--;
         let wordLength = words[cursorWordPos].textContent.length;
@@ -76,7 +77,7 @@ window.onkeydown = (event) => {
     console.log(event);
     if (event.key != null) {
         const typeEvent = event.key.length == 1;
-        if (typeEvent && event.key != " ") {moveCursorForward();}
+        if (typeEvent) {moveCursorForward();}
         else if (event.key == "ArrowLeft") {moveCursorBackwards();}
         else if (event.key == "ArrowRight") {moveCursorForward();}
     }
