@@ -32,7 +32,8 @@ body {
     
 }
 
-.word {
+
+.default-font {
     position: relative;
     color: rgba(255, 255, 255, .5);
 
